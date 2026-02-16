@@ -1,0 +1,68 @@
+/* CSS Variables - Apple Design System */
+:root {
+    /* Colors - Apple Style */
+    --apple-blue: #007AFF;
+    --apple-blue-hover: #0051D5;
+    --apple-gray: #8E8E93;
+    --apple-light-gray: #C7C7CC;
+    --apple-red: #FF3B30;
+    --apple-yellow: #FFCC00;
+    --apple-green: #34C759;
+    
+    /* Glass Effect */
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    --glass-blur: 25px;
+    --glass-saturate: 180%;
+    
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 24px;
+    
+    /* Typography */
+    --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", system-ui, -apple-system, sans-serif;
+    --font-size-xs: 11px;
+    --font-size-sm: 13px;
+    --font-size-md: 15px;
+    --font-size-lg: 17px;
+    --font-size-xl: 22px;
+    --font-size-xxl: 28px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Z-index layers */
+    --z-background: 0;
+    --z-content: 10;
+    --z-sidebar: 100;
+    --z-statusbar: 200;
+    --z-window: 300;
+    --z-window-active: 400;
+    --z-dropdown: 500;
+    --z-modal: 600;
+    
+    /* Layout */
+    --statusbar-height: 44px;
+    --sidebar-width: 240px;
+    --sidebar-width-collapsed: 60px;
+}
+
+/* Dark mode support (optional future enhancement) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --glass-bg: rgba(30, 30, 30, 0.7);
+        --glass-border: rgba(255, 255, 255, 0.1);
+    }
+}
