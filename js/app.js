@@ -55,13 +55,15 @@ const app = {
     },
 
     setupSecurity() {
-        // Prevent right-click context menu (optional, can be removed)
-        // document.addEventListener('contextmenu', e => e.preventDefault());
-
-        // Add CSP meta tag programmatically
+        // Note: CSP is intentionally permissive for a static demo site
+        // In production, use stricter policies with nonces for inline scripts
+        // and remove 'unsafe-eval' if not needed
+        
+        // For a static site without build tools, we need 'unsafe-inline'
+        // to support inline event handlers and style attributes
         const meta = document.createElement('meta');
         meta.httpEquiv = 'Content-Security-Policy';
-        meta.content = "default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:;";
+        meta.content = "default-src 'self' 'unsafe-inline' https: data: blob:;";
         document.head.appendChild(meta);
     },
 

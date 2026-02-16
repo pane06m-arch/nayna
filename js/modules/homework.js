@@ -140,7 +140,7 @@ window.homeworkModule = {
                     ${data.studentName ? `<p style="margin: 10px 0;">${utils.sanitizeHTML(data.studentName)}</p>` : ''}
                     ${data.studentNumber ? `<p style="margin: 10px 0;">Öğrenci No: ${utils.sanitizeHTML(data.studentNumber)}</p>` : ''}
                     ${data.courseName ? `<p style="margin: 10px 0;">${utils.sanitizeHTML(data.courseName)}</p>` : ''}
-                    <p style="margin: 10px 0;">${new Date().toLocaleDateString('tr-TR')}</p>
+                    <p style="margin: 10px 0;">${new Date().toLocaleDateString(i18n.currentLang === 'en' ? 'en-US' : 'tr-TR')}</p>
                 </div>
 
                 <div style="margin-bottom: 40px; text-align: justify;">

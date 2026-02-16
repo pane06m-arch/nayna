@@ -116,7 +116,7 @@
 /* Very small mobile devices */
 @media screen and (max-width: 480px) {
     .status-bar {
-        font-size: 10px;
+        font-size: 12px; /* Increased from 10px for better readability */
     }
 
     .date {

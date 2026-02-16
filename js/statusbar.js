@@ -103,9 +103,19 @@ const statusBar = {
 
     async fetchWeather(lat, lon) {
         try {
+            // Validate coordinates
+            const latitude = parseFloat(lat);
+            const longitude = parseFloat(lon);
+            
+            if (isNaN(latitude) || isNaN(longitude) || 
+                latitude < -90 || latitude > 90 || 
+                longitude < -180 || longitude > 180) {
+                throw new Error('Invalid coordinates');
+            }
+
             // Using Open-Meteo API (free, no API key required)
             const response = await fetch(
-                `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`
+                `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`
             );
             
             if (!response.ok) {
