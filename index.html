@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PAPA QUDI - Apple-inspired Glassmorphism Web Portal">
+    <title>PAPA QUDI</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/statusbar.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/window.css">
+    <link rel="stylesheet" href="css/modules.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div class="status-left">
+            <span class="clock" id="clock">00:00</span>
+            <span class="date" id="date">Loading...</span>
+            <span class="weather" id="weather">
+                <span class="weather-icon">☀️</span>
+                <span class="weather-temp">--°C</span>
+            </span>
+        </div>
+        <div class="status-center">
+            <h1 class="logo">PAPA QUDI</h1>
+        </div>
+        <div class="status-right">
+            <div class="language-selector" id="languageSelector">
+                <button class="lang-button" id="currentLang">TR</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-option" data-lang="tr">🇹🇷 Türkçe</button>
+                    <button class="lang-option" data-lang="en">🇬🇧 English</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <button class="menu-item" data-module="home">
+                <span class="menu-icon">🏠</span>
+                <span class="menu-text" data-i18n="menu.home">Ana Sayfa</span>
+            </button>
+            
+            <button class="menu-item expandable" data-module="agriculture">
+                <span class="menu-icon">🌾</span>
+                <span class="menu-text" data-i18n="menu.agriculture">Tarım & Hayvancılık</span>
+                <span class="expand-arrow">›</span>
+            </button>
+            <div class="submenu">
+                <button class="submenu-item" data-module="agriculture-prices">
+                    <span data-i18n="menu.prices">Fiyatlar</span>
+                </button>
+                <button class="submenu-item" data-module="agriculture-analytics">
+                    <span data-i18n="menu.analytics">Analitik</span>
+                </button>
+            </div>
+
+            <button class="menu-item" data-module="journal">
+                <span class="menu-icon">📔</span>
+                <span class="menu-text" data-i18n="menu.journal">Günlük Yazma</span>
+            </button>
+
+            <button class="menu-item" data-module="news">
+                <span class="menu-icon">📰</span>
+                <span class="menu-text" data-i18n="menu.news">Haberler</span>
+            </button>
+
+            <button class="menu-item" data-module="twitter">
+                <span class="menu-icon">𝕏</span>
+                <span class="menu-text" data-i18n="menu.twitter">X (Twitter)</span>
+            </button>
+
+            <button class="menu-item" data-module="books">
+                <span class="menu-icon">📚</span>
+                <span class="menu-text" data-i18n="menu.books">Kitap & Şiir</span>
+            </button>
+
+            <button class="menu-item" data-module="fortune">
+                <span class="menu-icon">🔮</span>
+                <span class="menu-text" data-i18n="menu.fortune">Fal</span>
+            </button>
+
+            <button class="menu-item" data-module="homework">
+                <span class="menu-icon">📝</span>
+                <span class="menu-text" data-i18n="menu.homework">Ödev</span>
+            </button>
+
+            <button class="menu-item" data-module="settings">
+                <span class="menu-icon">⚙️</span>
+                <span class="menu-text" data-i18n="menu.settings">Ayarlar</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Spotlight Search -->
+        <div class="spotlight-search" id="spotlightSearch">
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="searchInput"
+                    placeholder="Ara..."
+                    data-i18n-placeholder="search.placeholder"
+                >
+            </div>
+        </div>
+
+        <!-- Window Container -->
+        <div class="window-container" id="windowContainer"></div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/i18n.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/statusbar.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/window-manager.js"></script>
+    <script src="js/modules/agriculture.js"></script>
+    <script src="js/modules/journal.js"></script>
+    <script src="js/modules/news.js"></script>
+    <script src="js/modules/twitter.js"></script>
+    <script src="js/modules/books.js"></script>
+    <script src="js/modules/fortune.js"></script>
+    <script src="js/modules/homework.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

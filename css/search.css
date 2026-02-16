@@ -1,0 +1,109 @@
+/* Spotlight Search - Apple Style */
+
+.spotlight-search {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 640px;
+    z-index: calc(var(--z-content) + 1);
+    transition: all var(--transition-slow);
+}
+
+.spotlight-search.has-windows {
+    top: 15%;
+    transform: translate(-50%, 0);
+}
+
+.spotlight-search.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-normal);
+}
+
+.search-container:hover {
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+}
+
+.search-container:focus-within {
+    transform: scale(1.02);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.search-icon {
+    font-size: var(--font-size-xxl);
+    margin-right: var(--spacing-md);
+    opacity: 0.8;
+}
+
+.search-input {
+    flex: 1;
+    background: transparent;
+    color: white;
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    border: none;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Search suggestions dropdown (optional future enhancement) */
+.search-suggestions {
+    position: absolute;
+    top: calc(100% + var(--spacing-md));
+    left: 0;
+    right: 0;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    padding: var(--spacing-sm);
+    max-height: 400px;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all var(--transition-fast);
+}
+
+.search-suggestions.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.suggestion-item {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    color: white;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.suggestion-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.suggestion-item.selected {
+    background: rgba(0, 122, 255, 0.3);
+}

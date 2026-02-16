@@ -1,0 +1,215 @@
+/* Responsive Design */
+
+/* Tablet and smaller */
+@media screen and (max-width: 1024px) {
+    :root {
+        --sidebar-width: 200px;
+    }
+
+    .window {
+        min-width: 320px;
+    }
+
+    .spotlight-search {
+        max-width: 500px;
+    }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 768px) {
+    :root {
+        --statusbar-height: 50px;
+        --sidebar-width: 240px;
+    }
+
+    /* Show mobile menu toggle */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    /* Status bar adjustments */
+    .status-bar {
+        padding: 0 var(--spacing-md);
+        font-size: var(--font-size-xs);
+    }
+
+    .status-left,
+    .status-right {
+        gap: var(--spacing-sm);
+    }
+
+    .logo {
+        font-size: var(--font-size-md);
+    }
+
+    .weather {
+        display: none; /* Hide weather on very small screens */
+    }
+
+    /* Hide sidebar by default on mobile */
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    /* Adjust main content when sidebar is hidden */
+    .main-content {
+        left: 0;
+    }
+
+    /* Full screen spotlight on mobile */
+    .spotlight-search {
+        width: calc(100% - var(--spacing-lg) * 2);
+        max-width: none;
+    }
+
+    .search-container {
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .search-input {
+        font-size: var(--font-size-lg);
+    }
+
+    /* Windows take full screen on mobile */
+    .window {
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 0;
+    }
+
+    .window-titlebar {
+        padding: var(--spacing-md);
+    }
+
+    .window-content {
+        padding: var(--spacing-md);
+    }
+
+    /* Module adjustments */
+    .journal-container {
+        grid-template-columns: 1fr;
+    }
+
+    .journal-calendar {
+        display: none; /* Hide calendar on mobile */
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .agriculture-dashboard {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Very small mobile devices */
+@media screen and (max-width: 480px) {
+    .status-bar {
+        font-size: 10px;
+    }
+
+    .date {
+        display: none;
+    }
+
+    .logo {
+        font-size: var(--font-size-sm);
+    }
+
+    .window-title {
+        font-size: var(--font-size-sm);
+        max-width: 40%;
+    }
+
+    .search-icon {
+        font-size: var(--font-size-lg);
+    }
+}
+
+/* Landscape mobile */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .spotlight-search {
+        top: 10%;
+    }
+
+    .window {
+        height: 100% !important;
+    }
+}
+
+/* Large desktop screens */
+@media screen and (min-width: 1920px) {
+    :root {
+        --sidebar-width: 280px;
+        --font-size-md: 16px;
+        --font-size-lg: 18px;
+        --font-size-xl: 24px;
+    }
+
+    .window {
+        min-width: 600px;
+        min-height: 400px;
+    }
+
+    .spotlight-search {
+        max-width: 800px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .status-bar,
+    .sidebar,
+    .spotlight-search,
+    .mobile-menu-toggle,
+    .window-titlebar {
+        display: none;
+    }
+
+    .window {
+        position: static;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+
+    .window-content {
+        color: #000;
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    :root {
+        --glass-bg: rgba(0, 0, 0, 0.9);
+        --glass-border: rgba(255, 255, 255, 0.5);
+    }
+
+    .menu-item:hover,
+    .btn:hover {
+        border: 2px solid white;
+    }
+}
